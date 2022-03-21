@@ -24,15 +24,15 @@ h1 {
 .board {
   border: 1rem solid #ff652f;
   background: #ff652f;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 1rem;
 }
 
 .squares {
-  background: #272727;
+  background: #4d3f3f;
   border: none;
   font-size: 5rem;
   /* font-weight: 800; */
@@ -40,8 +40,14 @@ h1 {
   outline: none;
 }
 
+.img {
+width: 150px;
+height: 150px;
+}
+
 .X {
   color: red;
+  img: url(/images/exbacon.png);
 }
 .O {
   color: green;

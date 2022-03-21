@@ -1,17 +1,32 @@
 import React, { useState } from "react";
 import { calculateWinner } from "../helper";
 import Board from "./Board";
+import xbacon from "./images/exbacon.png";
+import oegg from "./images/owegg.png";
 
 function refreshPage() {
   window.location.reload(false);
 }
+
+const ex = <img className={"img"} src={xbacon}  alt="X"/>
+const ow = <img className={"img"} src={oegg}  alt="X"/>
+
+
+const exes = [
+  {
+    name: "X",
+    image: ex
+  }
+];
 
 const Game = () => {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
-  const xO = xIsNext ? "X" : "O";
+  const xO = xIsNext ? <img src={exes.image} alt = "X"/> : ow;
+  const ox = xIsNext ? "X" : "O";
+
 
   const handleClick = (i) => {
     const historyPoint = history.slice(0, stepNumber + 1);
@@ -50,7 +65,7 @@ const Game = () => {
           <h3>History</h3>
           {renderMoves()}
         </div>
-        <h3>{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
+        <h3>{winner ? "Winner: " + winner : "Next Player: " + ox}</h3>
         <h2><button onClick={refreshPage}>Reset</button></h2>
       </div>
     </>
