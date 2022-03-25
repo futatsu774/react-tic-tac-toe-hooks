@@ -7,14 +7,15 @@
 }
 
 body {
-  background-color: black;
+  /* background-color: black; */
   color: white;
   font-family: "Roboto", sans-serif;
   display: flex;
   /* align-items: center; */
   justify-content: center;
   min-height: 100vh;
-  padding: 2rem;
+  padding: 50px;
+
 }
 
 h1 {
@@ -22,13 +23,16 @@ h1 {
 }
 
 .board {
-  border: 1rem solid #ff652f;
-  background: #ff652f;
+  border: 10px solid transparent;
+  background: #3a221a;
+
   width: 600px;
   height: 600px;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 1rem;
+  padding: 10px;
+
 }
 
 .squares {

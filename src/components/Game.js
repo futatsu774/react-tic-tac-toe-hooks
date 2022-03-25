@@ -9,7 +9,7 @@ function refreshPage() {
 }
 
 const ex = <img className={"img"} src={xbacon}  alt="X"/>
-const ow = <img className={"img"} src={oegg}  alt="X"/>
+const ow = <img className={"img"} src={oegg}  alt="O"/>
 
 
 const exes = [
@@ -24,7 +24,7 @@ const Game = () => {
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
-  const xO = xIsNext ? <img src={exes.image} alt = "X"/> : ow;
+  const xO = xIsNext ? ex : ow;
   const ox = xIsNext ? "X" : "O";
 
 
@@ -65,7 +65,7 @@ const Game = () => {
           <h3>History</h3>
           {renderMoves()}
         </div>
-        <h3>{winner ? "Winner: " + winner : "Next Player: " + ox}</h3>
+        <h3>{winner ? "Winner: " + winner.props.alt : "Next Player: " + ox}</h3>
         <h2><button onClick={refreshPage}>Reset</button></h2>
       </div>
     </>
